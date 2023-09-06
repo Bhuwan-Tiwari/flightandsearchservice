@@ -13,3 +13,6 @@
 - test [later]
 - static/
 -temp/
+
+update 1 info about project setup
+
