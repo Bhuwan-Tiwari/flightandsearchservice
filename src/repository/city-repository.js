@@ -1,7 +1,7 @@
 const { City } = require('../models/index')
 
-class cityreposritory {
-    async createcity({ name }) {
+class CityRepository {
+    async createCity({ name }) {
         try {
             const city = await City.create({ name });
             return city;
@@ -11,9 +11,11 @@ class cityreposritory {
         }
     }
 
-    async deletecity(cityid) {
+    async deleteCity(cityid) {
         try {
-            await City.destory({ where: { id: cityid } });
+            await City.destroy({ where: { id: cityid } });
+            return true;
+
         }
         catch (error) {
             throw { error };
@@ -22,4 +24,4 @@ class cityreposritory {
 
 }
 
-module.exports=cityreposritory;
+module.exports=CityRepository;
