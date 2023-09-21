@@ -24,9 +24,9 @@ class CityRepository {
         }
     }
 
-    async updateCity(data,cityid) {
+    async updateCity(cityid,data) {
         try {
-            const city = await City.updateCity(data,
+            const city = await City.update(data,
                { where : {id : cityid}})
                return city;
         }
@@ -37,9 +37,9 @@ class CityRepository {
         }
     }
 
-    async getcity(cityid) {
+    async getCity(cityid) {
         try {
-          const city = await City.findByPk(cityid)
+          const city = await City.findByPk(cityid);
           return city;
         } 
         catch (error) {

@@ -46,7 +46,7 @@ try {
 async getCity(cityid)
 {
 try {
-    const city = await this.cityRepository.getcity(cityid)
+    const city = await this.cityRepository.getCity(cityid)
     return city;
 } 
 catch (error) {
