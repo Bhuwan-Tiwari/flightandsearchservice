@@ -1,7 +1,8 @@
 //putting all the v1 api routes inside this folder
 
 const express = require('express')
-const CityController = require('../../controllers/city-controller')
+const CityController = require('../../controllers/city-controller');
+const { CityRepository } = require('../../repository');
 const router = express.Router();
 
 
@@ -9,6 +10,7 @@ const router = express.Router();
 router.post('/city', CityController.create)
 router.delete('/city/:id', CityController.destroy)
 router.get('/city/:id', CityController.get)
+router.get('/city',CityController.getAll)
 router.patch('/city/:id', CityController.update)
 
 module.exports = router;
