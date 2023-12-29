@@ -6,6 +6,8 @@ const cityService = new CityService();
 // data-> req.body
 const create = async (req, res) => {
     try {
+        // promised based function
+
         const city = await cityService.createCity(req.body);
         return res.status(201).json({
 

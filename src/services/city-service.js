@@ -1,5 +1,5 @@
 const { CityRepository } = require('../repository/index')
-
+//class CityRepository
 class CityService {
     constructor() {
         this.cityRepository = new CityRepository;
@@ -7,6 +7,8 @@ class CityService {
 
 
     async createCity({ name }) {
+                //member function
+
         try {
             const city = await this.cityRepository.createCity({ name })
             return city;
