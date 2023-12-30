@@ -1,6 +1,9 @@
 //putting all the v1 api routes inside this folder
 
 const express = require('express')
+
+const FlightMiddlewares = require('../../middleware/flight-middlewares')
+
 const CityController = require('../../controllers/city-controller');
 const FlightController = require('../../controllers/flight-controller')
 const AirportController = require('../../controllers/airport-controller');
@@ -14,7 +17,7 @@ router.get('/city/:id', CityController.get)
 router.get('/city',CityController.getAll)
 router.patch('/city/:id', CityController.update)
 
-router.post('/flight',FlightController.create);
+router.post('/flight',FlightMiddlewares.validateCreateFlight,FlightController.create);
 router.get('/flights',FlightController.getAll)
 
 router.post('/airports', AirportController.create);
